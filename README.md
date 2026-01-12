@@ -1,5 +1,5 @@
-📊 Customer Churn Prediction & Analysis
-This project is an end-to-end Machine Learning solution designed to identify customers at high risk of churning (leaving the service). It includes a comprehensive data analysis pipeline and a live Streamlit web application for real-time predictions.
+🍽️ Restaurant Rating Prediction & Deployment
+An end-to-end Machine Learning application designed to predict restaurant rating classes based on service features and cost parameters. This project transitions from a detailed research-oriented Jupyter Notebook to a production-ready Streamlit web application.
 
 🚀 Live Demo
 [https://restaurant-rating-predictor.streamlit.app/]
@@ -7,32 +7,28 @@ This project is an end-to-end Machine Learning solution designed to identify cus
 🛠️ Tech Stack
 Language: Python 3.10+
 
-ML Frameworks: Scikit-learn, XGBoost, AdaBoost
+Machine Learning: Scikit-learn, Random Forest Regressor
 
-Data Handling: Pandas, NumPy
-
-Visualization: Seaborn, Matplotlib
+Optimization: GridSearchCV (Hyperparameter Tuning)
 
 Deployment: Streamlit
 
-Sampling: IMBLearn (SMOTE)
+Data Pipelines: Joblib (Model & Scaler Serialization)
 
-📈 Key Features
-Class Imbalance Handling: Implemented SMOTE to handle the minority churn class, ensuring the model doesn't just predict "No Churn" for everyone.
+Visualization: Seaborn, Matplotlib
 
-Model Comparison: Evaluated Random Forest, AdaBoost, and XGBoost to find the most robust classifier.
+📊 Key Features
+Hyperparameter Optimization: Utilized GridSearchCV to fine-tune the Random Forest model, resulting in a significantly reduced RMSE of 0.45.
 
-Full-Stack App: A clean Streamlit UI that takes customer details (tenure, contract type, monthly charges, etc.) and outputs a churn probability.
+Robust Preprocessing: Implemented a consistent scaling pipeline using StandardScaler to ensure numerical stability across cost and price-range features.
 
-Automated Pipeline: Serialized encoders and models using pickle for consistent data transformation.
+Production-Ready Pipeline: Serialized both the trained model (mlmodel.pkl) and the feature scaler (scaler.pkl) to prevent data leakage during real-time inference.
 
-📊 Model Performance
-The final model achieved the following metrics on the test set:
+Interactive UI: A user-friendly Streamlit dashboard allowing users to toggle features like "Table Booking" and "Online Delivery" to see immediate impact on restaurant ratings.
 
-Accuracy: 79%
+📈 Performance Metrics
+Mean Absolute Error (MAE): 0.35
 
-F1-Score (Churn Class): 0.58
+Root Mean Squared Error (RMSE): 0.45
 
-Recall (Churn Class): 0.57
-
-Key Insight: Contract type and Monthly Charges were identified as the strongest predictors of customer attrition.
+Feature Importance: Price range and Average Cost were identified as the primary drivers for restaurant rating predictions.
